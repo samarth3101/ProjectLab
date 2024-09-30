@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ValueVista</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const data = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          phone: document.getElementById("phone").value,
+          password: document.getElementById("password").value,
+        };
+
+        fetch("/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => {
+            if (response.ok) {
+              return response.json(); // Parse JSON response
+            } else {
+              throw new Error("Network response was not ok.");
+            }
+          })
+          .then((data) => {
+            // Handle success
+            console.log(data);
+            window.open("submission.html", "_blank"); // Open new tab
+          })
+          .catch((error) => {
+            alert("Error: " + error.message);
+          });
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="navbar_logo">
+        <a href="#">ValueVista<sup>&reg;</sup></a>
+      </div>
+      <ul class="navbar_links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="navbar_toggle">
+        <i class="fa fa-bars"></i>
+      </div>
+    </nav>
+
+    <!-- about us section -->
+    <div class="aboutus">
+      <div>
+        <p>
+          Welcome to
+          <a href="visitus.com"><span class="highlight">ValueVista</span></a>
+          your trusted destination. <br />we are dedicated to transforming how
+          you navigate the real estate landscape in Pune. <br />Our platform
+          harnesses advanced data analytics and cutting-edge technology to
+          provide accurate price predictions and comprehensive insights about
+          various locations. <br />We believe that informed decisions lead to
+          better outcomes, which is why we focus on delivering real-time
+          information tailored to your needs. Whether you're looking to buy,
+          rent, or invest, our user-friendly interface makes it easy to explore
+          options and uncover the true value of places in Pune. <br />Join us on
+          this journey to empower your real estate decisions with confidence and
+          clarity.
+        </p>
+      </div>
+    </div>
+    <br />
+    <hr />
+
+    <!-- servie column -->
+
+    <body class="service">
+      <div class="img"></div>
+      <div class="container text-center">
+        <h1>Pune Property Price Prediction</h1>
+        <form
+          class="form"
+          action="{{url_for('prediction')}}"
+          method="POST"
+          autocomplete="off"
+        >
+          <h2>Area (Square Feet)</h2>
+          <input
+            required
+            type="number"
+            class="area floatLabel"
+            id="uiSqft"
+            name="Squareft"
+            placeholder="1000"
+            min="1000"
+            max="50000"
+          />
+
+          <h2>BHK</h2>
+          <div class="switch-field text-center">
+            <div class="allRadio">
+              <input type="radio" id="radio-bhk-1" name="uiBHK" value="1" />
+              <label for="radio-bhk-1">1</label>
+              <input
+                type="radio"
+                id="radio-bhk-2"
+                name="uiBHK"
+                value="2"
+                checked
+              />
+              <label for="radio-bhk-2">2</label>
+              <input type="radio" id="radio-bhk-3" name="uiBHK" value="3" />
+              <label for="radio-bhk-3">3</label>
+              <input type="radio" id="radio-bhk-4" name="uiBHK" value="4" />
+              <label for="radio-bhk-4">4</label>
+              <input type="radio" id="radio-bhk-5" name="uiBHK" value="5" />
+              <label for="radio-bhk-5">5</label>
+            </div>
+          </div>
+
+          <h2>Bathrooms</h2>
+          <div class="switch-field text-center">
+            <div class="allRadio">
+              <input
+                type="radio"
+                id="radio-bath-1"
+                name="uiBathrooms"
+                value="1"
+              />
+              <label for="radio-bath-1">1</label>
+              <input
+                type="radio"
+                id="radio-bath-2"
+                name="uiBathrooms"
+                value="2"
+                checked
+              />
+              <label for="radio-bath-2">2</label>
+              <input
+                type="radio"
+                id="radio-bath-3"
+                name="uiBathrooms"
+                value="3"
+              />
+              <label for="radio-bath-3">3</label>
+              <input
+                type="radio"
+                id="radio-bath-4"
+                name="uiBathrooms"
+                value="4"
+              />
+              <label for="radio-bath-4">4</label>
+              <input
+                type="radio"
+                id="radio-bath-5"
+                name="uiBathrooms"
+                value="5"
+              />
+              <label for="radio-bath-5">5</label>
+            </div>
+          </div>
+
+          <h2>Location</h2>
+          <div>
+            <select required name="sLocation" id="uiLocations" class="location">
+              <option value="" disabled selected>Choose a Location</option>
+              <option>Hinjewadi phase-1</option>
+              <option>Hinjewadi phase-2</option>
+              <option>Hinjewadi phase-3</option>
+              <option>Wakad</option>
+              <option>Tathawade</option>
+              <option>Punawale</option>
+              <option>Kiwale</option>
+              <option>Ravet</option>
+              <option>Nigadi</option>
+              <option>Akurdi</option>
+              <option>Chikhali</option>
+              <option>Moshi</option>
+              <option>Chakan</option>
+              <option>Talegaon</option>
+              <option>Chichwad</option>
+              <option>Pimpri</option>
+              <option>Thergaon</option>
+              <option>Rahatani</option>
+              <option>Pimple Saudagar</option>
+              <option>Pimple Nilakh</option>
+              <option>Pimple Gurav</option>
+              <option>Dapodi</option>
+              <option>Bopodi</option>
+              <option>Sanghavi</option>
+              <option>Navi Sanghavi</option>
+              <option>Kasarwadadi</option>
+              <option>Bhosari</option>
+              <option>Nahshik Phata</option>
+              <option>Aundh</option>
+              <option>Baner</option>
+              <option>Balewadi</option>
+              <option>Maan Hightech city</option>
+              <option>Khadki</option>
+              <option>Shivajinagar</option>
+              <option>Deccan Zymkhana</option>
+              <option>Nal Stop</option>
+              <option>F. C. Road</option>
+              <option>Karve Nagar</option>
+              <option>Warje</option>
+              <option>Kothrud</option>
+              <option>Shivane</option>
+              <option>Nanded City</option>
+              <option>Katraj</option>
+              <option>Sinhagad Road</option>
+              <option>Yerandwe</option>
+              <option>Swarget</option>
+              <option>Hadapsar</option>
+              <option>Magarpatta City</option>
+              <option>Kharadi</option>
+              <option>Viman Nagar</option>
+              <option>Yerwada</option>
+              <option>Pune Station</option>
+              <option>Koregaon Park</option>
+              <option>Kharadi Bypass</option>
+              <option>Wagholi</option>
+            </select>
+          </div>
+          <br />
+
+          <input class="submit" type="submit" value="Estimate Price" />
+        </form>
+      </div>
+    </body>
+    <hr />
+
+    <h3 style="text-align: center">Explore Some Top Localities</h3>
+
+    <!-- info-cards -->
+    <div id="cards">
+      <div class="card">
+        <img src="./assests/hinjwadi.jpg" alt="hinjewadi" />
+        <h3>
+          <br /><a href="#"><span>HINJEWADI</span></a>
+        </h3>
+        <p>
+          <br />The top IT sector of Pune undoubtedly has to be Hinjewadi. In a
+          very short time, the area has developed significantly. As a result, it
+          has caught the attention of various real estate developers. Several
+          real estate projects have come up in the past few years to cater to
+          the increasing demand for residential real estate. Hinjewadi is
+          located close to the city centre. If you're living in Hinjewadi, you'd
+          strike a balance between fun and work.
+        </p>
+        <button>Explore</button>
+      </div>
+      <div class="card">
+        <img src="./assests/viman nagar.jpg" alt="Viman-nagar" />
+        <h3><br /><a href="#">VIMAN NAGAR</a></h3>
+        <p>
+          <br />If you're seeking job opportunities and planning to move to
+          Pune, Viman Nagar can be your go-to place. There are many IT parks in
+          this place. As one of the most sought residential areas of Pune, Viman
+          Nagar has all the facilities you will need for comfortable living.
+          Viman Nagar is well connected to nearby localities like Kalyani Nagar,
+          Lohegaon, Dhanori and more. Being almost close to the city centre,
+          transportation in Viman Nagar is not a problem.
+        </p>
+        <button>Explore</button>
+      </div>
+      <div class="card">
+        <img src="./assests/koregaon-park.jpg" alt="kp" />
+        <h3><br /><a href="#">KOREGAON PARK</a></h3>
+        <p>
+          <br />Undoubtedly, one of the top residential choices of Pune has to
+          be Koregaon Park. Apart from high-value real estate, there are many
+          commercial properties in Koregaon Park. Being located in the city
+          centre, it will not be wrong to call it the heart of Pune. Koregaon
+          Park brings in the perfect entertainment opportunities, ranging from
+          the best cafes to restaurants and more. As it is in the centre, it is
+          well connected to other parts of the city via public transport. One of
+          the most unique features of Koregaon Park is that it offers the
+          perfect blend of nature and modern facilities.
+        </p>
+        <button>Explore</button>
+      </div>
+      <div class="card">
+        <img src="./assests/aundh.jpg" alt="Aundh" />
+        <h3>
+          <br /><a href="#"><span>AUNDH</span></a>
+        </h3>
+        <p>
+          <br />If you want peace, luxury and comfort, you should consider
+          living in Aundh, one of the prominent high-end localities. A serene
+          locality in Pune, Aundh is very popular among the people for its call
+          environment. No wonder it is one of the most preferred choices for
+          residential real estate investment. Being connected to the main parts
+          of the city, you can easily avail public transport and visit the
+          places. Whether you're a bachelor in Pune or a family, Aundh will
+          always have something surprising for you.
+        </p>
+        <button>Explore</button>
+      </div>
+
+      <div class="card">
+        <img src="./assests/kalyani-nagar.jpg" alt="kl" />
+        <h3>
+          <br /><a href="#"><span>KALYANI NAGAR</span></a>
+        </h3>
+        <p>
+          <br />Kalyani Nagar is one of those localities where you can find
+          everything, from commercial projects to residential ones. It is a very
+          sought location that is close to IT Parks, shopping malls and
+          entertainment centres. Public transport is also available here. So,
+          travelling from Kalyani Nagar to other parts of the city will be
+          pretty cheap. Moreover, Kalyani Nagar is very close to the Pune
+          Junction railway station.
+        </p>
+        <button>bookings</button>
+      </div>
+
+      <div class="card">
+        <img src="./assests/nibm road.jpg" alt="nibm" />
+        <h3>
+          <br /><a href="#"><span>NIBM Road</span></a>
+        </h3>
+        <p>
+          <br />If you want to stay close to the airport and railway station,
+          you must consider living in NIBM Road. Because of its proximity to the
+          railway and airport, the property prices are very high. Therefore, the
+          rental yield will be high too. Whether you're living here as a student
+          or working professional, NIBM Road will allow you to balance your work
+          and life. It is undoubtedly one of the best places to live for young
+          couples and bachelors.
+        </p>
+        <button>Explore</button>
+      </div>
+
+      <div class="card">
+        <img src="./assests/shivaji-nagar.jpg" alt="SVJR" />
+        <h3>
+          <br /><a href="#"><span>SHIVAJINAGAR</span></a>
+        </h3>
+        <p>
+          <br />Another very posh locality in Pune is Shivaji Nagar. As one of
+          the most posh residential areas, Shivaji Nagar houses several
+          government offices. The ongoing developments in Shivaji Nagar have
+          caught the eyes of investors. If you're planning to invest in Pune at
+          an affordable rate, you must consider Shivaji Nagar. It is anticipated
+          that the region will grow manifold in the coming times.
+        </p>
+        <button>Explore</button>
+      </div>
+
+      <div class="card">
+        <img src="./assests/magarpatacity.jpg" alt="mgcity" />
+        <h3>
+          <br /><a href="#"><span>MAGARPATTA CITY</span></a>
+        </h3>
+        <p>
+          <br />Magarpatta City is one of the most expensive localities in Pune.
+          There are residential areas with luxurious properties, bungalows and
+          apartments. However, there are limited commercial properties in
+          Magarpatta City. Magarpatta City is well-connected to hospitals,
+          schools and colleges. There are CCTV cameras installed in the area to
+          ensure safety across the place. These cameras are available at every
+          intersection. Moreover, during peak hours, police conduct regular
+          patrolling sessions to prevent the risk of theft and robbery.
+        </p>
+        <button>Explore</button>
+      </div>
+
+      <div class="card">
+        <img src="./assests/kharadi.jpg" alt="kharadi" />
+        <h3>
+          <br /><a href="#"><span>KHARADI</span></a>
+        </h3>
+        <p>
+          <br />Although located in the suburban areas of Pune, Kharadi is quite
+          a posh region. It is located mostly around the eastern side of Pune
+          and is known for its IT park. Apart from the huge IT parks, there are
+          some small-scale industries too. The real estate property prices in
+          Kharadi are pretty high because of its proximity to the airport and
+          railway. Due to the availability of local transport, movement is
+          pretty easy. The IT Park World Trade Centre is located in Kharadi. As
+          a result, there are many employment opportunities in this region.
+        </p>
+        <button>Explore</button>
+      </div>
+    </div>
+
+    <body>
+      <!-- Form -->
+      <div class="callback-form">
+        <a id="contact"></a>
+        <form onsubmit="handleSubmit(event)">
+          <h2>Get a Callback</h2>
+
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Enter your phone number"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="submit-btn">Request Callback</button>
+        </form>
+      </div>
+
+      <script>
+        function handleSubmit(event) {
+          event.preventDefault(); // Prevent default form submission
+
+          const data = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            password: document.getElementById("password").value,
+          };
+
+          fetch("http://localhost:3000/submit", {
+            // Ensure this URL is correct
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          })
+            .then((response) => {
+              if (response.ok) {
+                return response.json(); // Parse JSON response
+              } else {
+                throw new Error("Network response was not ok.");
+              }
+            })
+            .then((data) => {
+              // Handle success
+              console.log(data);
+              window.open("submission.html", "_blank"); // Open new tab
+            })
+            .catch((error) => {
+              alert("Error: " + error.message);
+            });
+        }
+      </script>
+    </body>
+
+    <!-- social-icons -->
+    <div class="media">
+      <ul>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </ul>
+    </div>
+
+    <!-- ending -->
+    <div class="end">
+      Made in &hearts; by Samarth Patil. All rights are reserved &copy;
+      2023-2024.
+    </div>
+
+    <script src="script.js"></script>
+    <script src="server.js"></script>
+  </body>
+</html>
