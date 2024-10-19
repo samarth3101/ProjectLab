@@ -1,0 +1,151 @@
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e; /* Dark background */
+    color: #f4f4f4; /* Light text color */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #222; /* Darker navbar background */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure navbar spans full width */
+    box-sizing: border-box; /* Include padding in width */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.navbar .logo a {
+    color: #007bff; /* Lighter accent color for logo */
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar nav ul li a {
+    color: #fff; /* White text for nav links */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+#logoutButton:hover{
+    color: rgb(188, 55, 55);
+}
+
+/* Hero Section */
+.hero {
+    background: url('assets/hero-image.jpg') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* White text for hero section */
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    padding: 0.75rem 2rem;
+    background-color: #007bff; /* Bright button color */
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #0c5cb2; /* Darker shade on hover */
+}
+
+/* Features Section */
+.features {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #2b2b2b; /* Dark background for features section */
+}
+
+.features h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #007bff; /* Accent color for headings */
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: space-around; /* Use space-around to avoid overflow */
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: #3a3a3a; /* Dark card background */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Slightly lighter shadow */
+    width: 30%;
+    text-align: center;
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Slightly move down */
+    transition: opacity 0.5s ease, transform 1s ease; /* Smooth transition */
+}
+
+.feature-card.visible {
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Move back to original position */
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: #007bff; /* Accent color for icons */
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #ccc; /* Lighter text color for description */
+}
+
+/* Footer */
+.footer {
+    background-color: #222; /* Dark footer background */
+    color: #fff; /* White text for footer */
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

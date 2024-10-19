@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - SkillSwap</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <img src="assets/user.png" alt="Profile Picture" class="profile-img" />
+                <h2>User Name</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="home.html" id="homeButton"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="profile.html" id="profileButton"><i class="fas fa-user"></i> Profile</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-book"></i> Courses</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                    </li>
+                    <li>
+                        <a href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <h1>Welcome, <span class="username">User!</span></h1>
+                <p>Your learning journey is just beginning!</p>
+            </header>
+
+            <div class="cards">
+                <!-- Card: Total Courses -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Total Courses</h3>
+                        <p>5</p>
+                    </div>
+                </div>
+
+                <!-- Card: Completed Courses -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Completed Courses</h3>
+                        <p>3</p>
+                    </div>
+                </div>
+
+                <!-- Card: Progress -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Progress</h3>
+                        <p>80%</p>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Upcoming Events -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Upcoming Events</h3>
+                        <p>2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Screen for Logout -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-bar"></div>
+        <br />
+        <div id="loadingMessage">Logging Out...</div>
+    </div>
+
+    <!-- FontAwesome icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Add event listener for the logout button
+        const logoutButton = document.getElementById("logoutButton");
+
+        logoutButton?.addEventListener("click", (e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            showLoadingScreenAndRedirect("login.html", "logout"); // Show loading screen before redirecting
+        });
+    </script>
+</body>
+
+</html>
