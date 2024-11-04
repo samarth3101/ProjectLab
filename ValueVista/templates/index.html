@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Price Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Real Estate House Price Prediction</h1>
+        <p>Accurately estimate property values with the power of AI.</p>
+        <button class="cta-button" onclick="showPropertyDetails()">Get Started</button>
+    </header>
+
+    <!-- Location Cards Section -->
+    <section class="location-cards">
+        <h2>Select a Popular Location</h2>
+        <div class="card-container">
+            <div class="card" data-location="Aundh">
+                <img src="/static/assets/aundh.jpg" alt="Aundh">
+                <p>Aundh</p>
+            </div>
+            <div class="card" data-location="Hadapsar">
+                <img src="/static/assets/hadapsar.jpg" alt="Hadapsar">
+                <p>Hadapsar</p>
+            </div>
+            <div class="card" data-location="Hinjewadi">
+                <img src="/static/assets/hinjwadi.jpg" alt="Hinjewadi">
+                <p>Hinjewadi</p>
+            </div>
+            <div class="card" data-location="Kalyani Nagar">
+                <img src="/static/assets/kalyani-nagar.jpg" alt="Kalyani Nagar">
+                <p>Kalyani Nagar</p>
+            </div>
+            <div class="card" data-location="Kharadi">
+                <img src="/static/assets/kharadi.jpg" alt="Kharadi">
+                <p>Kharadi</p>
+            </div>
+            <div class="card" data-location="Koregaon Park">
+                <img src="/static/assets/koregaon-park.jpg" alt="Koregaon Park">
+                <p>Koregaon Park</p>
+            </div>
+            <div class="card" data-location="Magarpatta City">
+                <img src="/static/assets/magarpatacity.jpg" alt="Magarpatta City">
+                <p>Magarpatta City</p>
+            </div>
+            <div class="card" data-location="NIBM Road">
+                <img src="/static/assets/nibm road.jpg" alt="NIBM Road">
+                <p>NIBM Road</p>
+            </div>
+            <div class="card" data-location="Shivaji Nagar">
+                <img src="/static/assets/shivaji-nagar.jpg" alt="Shivaji Nagar">
+                <p>Shivaji Nagar</p>
+            </div>
+            <div class="card" data-location="Viman Nagar">
+                <img src="/static/assets/viman nagar.jpg" alt="Viman Nagar">
+                <p>Viman Nagar</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Details Form -->
+    <section class="input-form" id="propertyDetails">
+        <h2>Enter Property Details</h2>
+        <form id="pricePredictionForm">
+            <label for="location">Location:</label>
+            <select id="location" name="location" required>
+                <option value="" disabled selected>Select a location</option>
+                <option value="Ambegaon Budruk">Ambegaon Budruk</option>
+                <option value="Aundh">Aundh</option>
+                <option value="Baner">Baner</option>
+                <option value="Bavdhan Khurd">Bavdhan Khurd</option>
+                <option value="Bavdhan Budruk">Bavdhan Budruk</option>
+                <option value="Balewadi">Balewadi</option>
+                <option value="Shivajinagar">Shivajinagar</option>
+                <option value="Bibvewadi">Bibvewadi</option>
+                <option value="Bhugaon">Bhugaon</option>
+                <option value="Bhukum">Bhukum</option>
+                <option value="Dhankawadi">Dhankawadi</option>
+                <option value="Dhanori">Dhanori</option>
+                <option value="Dhayari">Dhayari</option>
+                <option value="Erandwane">Erandwane</option>
+                <option value="Fursungi">Fursungi</option>
+                <option value="Ghorpadi">Ghorpadi</option>
+                <option value="Hadapsar">Hadapsar</option>
+                <option value="Hingne Khurd">Hingne Khurd</option>
+                <option value="Karve Nagar">Karve Nagar</option>
+                <option value="Kalas">Kalas</option>
+                <option value="Katraj">Katraj</option>
+                <option value="Khadki">Khadki</option>
+                <option value="Kharadi">Kharadi</option>
+                <option value="Kondhwa">Kondhwa</option>
+                <option value="Koregaon Park">Koregaon Park</option>
+                <option value="Kothrud">Kothrud</option>
+                <option value="Lohagaon">Lohagaon</option>
+                <option value="Manjri">Manjri</option>
+                <option value="Markal">Markal</option>
+                <option value="Mohammed Wadi">Mohammed Wadi</option>
+                <option value="Mundhwa">Mundhwa</option>
+                <option value="Nanded">Nanded</option>
+                <option value="Parvati (Parvati Hill)">Parvati (Parvati Hill)</option>
+                <option value="Panmala">Panmala</option>
+                <option value="Pashan">Pashan</option>
+                <option value="Pirangut">Pirangut</option>
+                <option value="Shivane">Shivane</option>
+                <option value="Sus">Sus</option>
+                <option value="Undri">Undri</option>
+                <option value="Vishrantwadi">Vishrantwadi</option>
+                <option value="Vitthalwadi">Vitthalwadi</option>
+                <option value="Vadgaon Khurd">Vadgaon Khurd</option>
+                <option value="Vadgaon Budruk">Vadgaon Budruk</option>
+                <option value="Vadgaon Sheri">Vadgaon Sheri</option>
+                <option value="Wagholi">Wagholi</option>
+                <option value="Wanwadi">Wanwadi</option>
+                <option value="Warje">Warje</option>
+                <option value="Yerwada">Yerwada</option>
+                <option value="Akurdi">Akurdi</option>
+                <option value="Bhosari">Bhosari</option>
+                <option value="Chakan">Chakan</option>
+                <option value="Charholi Budruk">Charholi Budruk</option>
+                <option value="Chikhli">Chikhli</option>
+                <option value="Chimbali">Chimbali</option>
+                <option value="Chinchwad">Chinchwad</option>
+                <option value="Dapodi">Dapodi</option>
+                <option value="Dehu Road">Dehu Road</option>
+                <option value="Dighi">Dighi</option>
+                <option value="Dudulgaon">Dudulgaon</option>
+                <option value="Hinjawadi">Hinjawadi</option>
+                <option value="Kalewadi">Kalewadi</option>
+                <option value="Kasarwadi">Kasarwadi</option>
+                <option value="Maan">Maan</option>
+                <option value="Moshi">Moshi</option>
+                <option value="Phugewadi">Phugewadi</option>
+                <option value="Pimple Gurav">Pimple Gurav</option>
+                <option value="Pimple Nilakh">Pimple Nilakh</option>
+                <option value="Pimple Saudagar">Pimple Saudagar</option>
+                <option value="Pimpri">Pimpri</option>
+                <option value="Punawale">Punawale</option>
+                <option value="Ravet">Ravet</option>
+                <option value="Rahatani">Rahatani</option>
+                <option value="Sangvi">Sangvi</option>
+                <option value="Talawade">Talawade</option>
+                <option value="Tathawade">Tathawade</option>
+                <option value="Thergaon">Thergaon</option>
+                <option value="Wakad">Wakad</option>
+            </select>
+
+            <label for="area">Area (sq ft):</label>
+            <input type="number" id="area" name="area" required>
+
+            <label for="bedrooms">Bedrooms:</label>
+            <input type="number" id="bedrooms" name="bedrooms" required>
+
+            <button type="submit">Predict Price</button>
+        </form>
+    </section>
+
+    <!-- Modal for displaying prediction results -->
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Predicted Price</h2>
+            <p id="predictionResult"></p>
+            <p id="additionalInfo"></p>
+        </div>
+    </div>
+
+    <!-- Market Insights Section -->
+    <!-- Market Insights Section -->
+    <section class="market-insights">
+        <h2>Latest Market Insights</h2>
+        <div class="insight" data-insight="housingMarketTrends">
+            <h3>Housing Market Trends</h3>
+            <p>Stay updated with the latest housing trends and data analytics to make informed decisions.</p>
+            <button class="learn-more" onclick="showInsightDetails('housingMarketTrends')">Learn More</button>
+        </div>
+        <div class="insight" data-insight="investmentOpportunities">
+            <h3>Investment Opportunities</h3>
+            <p>Discover the top areas for real estate investment with AI-driven insights.</p>
+            <button class="learn-more" onclick="showInsightDetails('investmentOpportunities')">Learn More</button>
+        </div>
+    </section>
+
+    <!-- Modal for detailed insights -->
+    <div id="learnMoreModal" class="learn-more-modal" style="display: none;">
+        <div class="modal-content">
+            <span id="closeInsight" class="close">&times;</span>
+            <p id="insightDetails"></p>
+        </div>
+    </div>
+
+    <!-- Insight Details Modal -->
+    <div id="insightModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeInsightModal">&times;</span>
+            <h2 id="insightTitle"></h2>
+            <p id="insightDescription"></p>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <h2>Why Use AI for Price Prediction?</h2>
+        <ul>
+            <li>Fast and accurate property valuation.</li>
+            <li>Data-driven insights to guide your investment decisions.</li>
+            <li>Analyze trends to predict future price movements.</li>
+        </ul>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="call-to-action">
+        <h2>Ready to Make Smarter Investments?</h2>
+        <p>Sign up for our premium service and access deeper insights, trend analysis, and professional recommendations.
+        </p>
+        <button class="signup-button" onclick="openSignupForm()">Sign Up Now</button>
+    </section>
+
+    <!-- Signup Form Modal -->
+    <div class="signup-form-modal" id="signupFormModal">
+        <div class="signup-form-content">
+            <span class="close-button" onclick="closeSignupForm()">&times;</span>
+            <h2>Signup</h2>
+            <form id="signupForm">
+                <label for="signup-username">Username:</label>
+                <input type="text" id="signup-username" name="username" required>
+
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="email" required>
+
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="password" required>
+
+                <button type="submit">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <details>
+            <summary>How does the AI predict property prices?</summary>
+            <p>Our AI model uses historical data, location, property size, and other features to provide accurate
+                predictions.</p>
+        </details>
+        <details>
+            <summary>Is this tool free to use?</summary>
+            <p>Yes, the tool is free for basic predictions. Advanced insights may require a subscription.</p>
+        </details>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <h2>Contact Us</h2>
+        <p>Email: samarth.patil3101@icloud.com</p>
+        <p>Phone: +91 8766794922</p>
+        <p>Address: Royal Court, Pune - 411033</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function openSignupForm() {
+            document.getElementById('signupFormModal').style.display = 'flex';
+        }
+
+        function closeSignupForm() {
+            document.getElementById('signupFormModal').style.display = 'none';
+        }
+
+        function showPropertyDetails() {
+            const formSection = document.getElementById('propertyDetails');
+            formSection.style.display = 'block';
+            formSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Close the modal when clicking outside the form content
+        window.onclick = function (event) {
+            const modal = document.getElementById('signupFormModal');
+            if (event.target === modal) {
+                closeSignupForm();
+            }
+        }
+    </script>
+
+
+    <script src="/static/script.js"></script>
+
+
+</body>
+
+</html>

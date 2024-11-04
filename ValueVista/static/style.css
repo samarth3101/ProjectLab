@@ -1,0 +1,557 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 2em;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.header p {
+    margin: 0.5em 0;
+}
+
+.cta-button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.cta-button:hover {
+    background-color: #ff8533;
+}
+
+/* Carousel Styling */
+.carousel {
+    text-align: center;
+    margin: 1.5em auto;
+}
+
+.carousel-container {
+    display: flex;
+    /* Use flexbox to align items */
+    justify-content: center;
+    /* Center the items */
+    flex-wrap: wrap;
+    /* Allow wrapping to the next line */
+    max-width: 1200px;
+    /* Limit the width of the carousel */
+    margin: 0 auto;
+    /* Center the carousel in the parent container */
+}
+
+.carousel-container img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+}
+
+/* Card Styling */
+.location-cards {
+    text-align: center;
+    padding: 2em 1em;
+}
+
+.location-cards h2 {
+    margin-bottom: 1em;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.card {
+    flex: 0 0 18%;
+    /* Each card takes up roughly 18% of the container */
+    box-sizing: border-box;
+    /* Ensure padding/margin doesn't affect width */
+    margin: 10px;
+    /* Space between cards */
+    text-align: center;
+    /* Center text within cards */
+    background-color: #fff;
+    /* Card background color */
+    border: 1px solid #ccc;
+    /* Optional border */
+    border-radius: 8px;
+    /* Rounded corners */
+    overflow: hidden;
+    /* Hide overflow */
+    transition: transform 0.3s;
+    /* Animation on hover */
+}
+
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    max-width: 125%;
+    /* Ensure image fits within the card */
+    height: 65%;
+    /* Maintain aspect ratio */
+}
+
+.card p {
+    padding: 0.5em;
+    font-weight: bold;
+}
+
+/* Form Styling */
+.input-form {
+    padding: 2em;
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2em;
+}
+
+.input-form h2 {
+    margin-bottom: 1em;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+/* Input fields */
+input,
+select { /* Apply styles to both input and select elements */
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff; /* White background for the input and select */
+    color: #333; /* Dark text color */
+}
+
+/* Dropdown Styling */
+select {
+    appearance: none; /* Remove default styling */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M7 10l5 5 5-5z"/></svg>'); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Position the arrow */
+    background-size: 1em; /* Size of the arrow */
+}
+
+/* Button Styling */
+button {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 0.7em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #ff8533; /* Change on hover */
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Prediction Display Styling */
+.prediction-result {
+    padding: 2em;
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2em;
+    text-align: center;
+}
+
+.prediction-result h2 {
+    margin-bottom: 0.5em;
+}
+
+#predictedPrice {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+
+/* Market Insights Section */
+.market-insights {
+    padding: 2em;
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2em;
+}
+
+.market-insights h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.insight {
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
+}
+
+.insight:last-child {
+    border-bottom: none;
+}
+
+.insight h3 {
+    margin: 0;
+    color: #333;
+}
+
+.insight p {
+    margin: 0.5em 0;
+}
+
+.learn-more {
+    color:#f4f4f4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.learn-more-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Set a maximum width */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Benefits Section */
+.benefits {
+    padding: 2em;
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2em;
+}
+
+.benefits h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.benefits ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.benefits li {
+    margin-bottom: 0.5em;
+}
+
+/* Call to Action Section */
+.call-to-action {
+    text-align: center;
+    padding: 2em;
+    background-color: #ff6600;
+    color: #fff;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 2em auto;
+}
+
+.call-to-action h2 {
+    margin-bottom: 0.5em;
+}
+
+.signup-button {
+    background-color: #fff;
+    color: #ff6600;
+    border: none;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.signup-button:hover {
+    background-color: #ffe0cc;
+}
+
+/* Modal Overlay Styling */
+.signup-form-modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal Content Styling */
+.signup-form-content {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+}
+
+.signup-form-content h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.signup-form-content label {
+    display: block;
+    margin: 0.5em 0 0.2em;
+}
+
+.signup-form-content input {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.signup-form-content button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup-form-content button:hover {
+    background-color: #555;
+}
+
+/* Close Button Styling */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 2em;
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2em;
+    text-align: center;
+}
+
+.testimonial {
+    background-color: #f9f9f9;
+    padding: 1em;
+    margin-top: 1em;
+    border-left: 5px solid #333;
+}
+
+/* FAQ Section */
+.faq {
+    padding: 2em;
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2em;
+}
+
+.faq summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.faq p {
+    margin: 0.5em 0 0;
+    padding-left: 1em;
+}
+
+/* Footer Styling */
+.footer {
+    padding: 2em;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 2em auto;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.social-media a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .carousel-container {
+        flex-direction: column;
+    }
+
+    .card-container {
+        flex-direction: column;
+    }
+}
