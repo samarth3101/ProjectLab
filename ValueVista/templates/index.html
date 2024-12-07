@@ -18,7 +18,8 @@
 
     <!-- Location Cards Section -->
     <section class="location-cards">
-        <h2>Select a Popular Location</h2>
+        <h2>Some Popular Location
+            s</h2>
         <div class="card-container">
             <div class="card" data-location="Aundh">
                 <img src="/static/assets/aundh.jpg" alt="Aundh">
@@ -224,19 +225,35 @@
     <div class="signup-form-modal" id="signupFormModal">
         <div class="signup-form-content">
             <span class="close-button" onclick="closeSignupForm()">&times;</span>
-            <h2>Signup</h2>
-            <form id="signupForm">
-                <label for="signup-username">Username:</label>
-                <input type="text" id="signup-username" name="username" required>
 
-                <label for="signup-email">Email:</label>
-                <input type="email" id="signup-email" name="email" required>
-
-                <label for="signup-password">Password:</label>
-                <input type="password" id="signup-password" name="password" required>
-
-                <button type="submit">Create Account</button>
+            <h2>Create Your Account</h2>
+            <form id="contact-form" class="contact-form" onsubmit="submitForm(event)">
+                <div class="form-field">
+                    <label for="name">Your Name</label>
+                    <input type="text" name="name" id="name" required placeholder=" " />
+                </div>
+                <div class="form-field">
+                    <label for="email">Your Email</label>
+                    <input type="email" name="email" id="email" required placeholder=" " />
+                </div>
+                <div class="form-field">
+                    <label for="message">Your Message</label>
+                    <textarea name="message" id="message" required placeholder=" "></textarea>
+                </div>
+                <button type="submit" class="contact-button">Send Message</button>
             </form>
+
+            <!-- Thank You Message Popup -->
+            <div id="thank-you-popup" class="popup" style="display: none;">
+                <div class="popup-content">
+                    <h3>Thank You!</h3>
+                    <p>Your message has been sent successfully.</p>
+                    <button onclick="closePopup()">Close</button>
+                </div>
+            </div>
+
+            <!-- Error/Success Messages -->
+            <div id="formMessages" class="form-messages"></div>
         </div>
     </div>
 
@@ -283,12 +300,43 @@
             formSection.scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Close the modal when clicking outside the form content
-        window.onclick = function (event) {
-            const modal = document.getElementById('signupFormModal');
-            if (event.target === modal) {
-                closeSignupForm();
-            }
+        // Function to handle form submission with AJAX
+        function submitForm(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Prepare form data
+            const formData = new FormData(document.getElementById('contact-form'));
+
+            // Send AJAX request
+            fetch("https://formspree.io/f/mqakbzod", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // Hide the form and show the thank-you popup
+                        document.getElementById('contact-form').style.display = 'none';
+                        document.getElementById('thank-you-popup').style.display = 'block';
+                    } else {
+                        alert("There was an issue submitting the form. Please try again.");
+                    }
+                })
+                .catch(error => {
+                    alert("There was an error: " + error.message);
+                });
+        }
+
+        // Function to close the popup and reset the form
+        function closePopup() {
+            // Hide the thank-you popup
+            document.getElementById('thank-you-popup').style.display = 'none';
+
+            // Reset the form and show it again
+            document.getElementById('contact-form').style.display = 'block';
+            document.getElementById('contact-form').reset();
         }
     </script>
 

@@ -2,6 +2,9 @@ from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
 
+
+
+
 # Base prices for different locations (in lakhs)
 base_prices = {
     'Ambegaon Budruk': 60,

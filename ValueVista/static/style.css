@@ -84,9 +84,7 @@ body {
 
 .card {
     flex: 0 0 18%;
-    /* Each card takes up roughly 18% of the container */
     box-sizing: border-box;
-    /* Ensure padding/margin doesn't affect width */
     margin: 10px;
     /* Space between cards */
     text-align: center;
@@ -143,23 +141,30 @@ label {
 
 /* Input fields */
 input,
-select { /* Apply styles to both input and select elements */
+select {
+    /* Apply styles to both input and select elements */
     width: 100%;
     padding: 0.5em;
     margin-bottom: 1em;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #fff; /* White background for the input and select */
-    color: #333; /* Dark text color */
+    background-color: #fff;
+    /* White background for the input and select */
+    color: #333;
+    /* Dark text color */
 }
 
 /* Dropdown Styling */
 select {
-    appearance: none; /* Remove default styling */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M7 10l5 5 5-5z"/></svg>'); /* Custom dropdown arrow */
+    appearance: none;
+    /* Remove default styling */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M7 10l5 5 5-5z"/></svg>');
+    /* Custom dropdown arrow */
     background-repeat: no-repeat;
-    background-position: right 10px center; /* Position the arrow */
-    background-size: 1em; /* Size of the arrow */
+    background-position: right 10px center;
+    /* Position the arrow */
+    background-size: 1em;
+    /* Size of the arrow */
 }
 
 /* Button Styling */
@@ -174,7 +179,8 @@ button {
 }
 
 button:hover {
-    background-color: #ff8533; /* Change on hover */
+    background-color: #ff8533;
+    /* Change on hover */
 }
 
 /* Modal styles */
@@ -281,7 +287,7 @@ button:hover {
 }
 
 .learn-more {
-    color:#f4f4f4;
+    color: #f4f4f4;
     text-decoration: none;
     font-weight: bold;
 }
@@ -291,45 +297,65 @@ button:hover {
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black w/ opacity */
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
+    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
+    /* Could be more or less, depending on screen size */
 }
 
 .learn-more-modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black background with opacity */
 }
 
 .modal-content {
     background-color: #fff;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
+    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    max-width: 500px; /* Set a maximum width */
-    border-radius: 8px; /* Rounded corners */
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    /* Set a maximum width */
+    border-radius: 8px;
+    /* Rounded corners */
 }
 
 .close {
@@ -502,6 +528,43 @@ button:hover {
     padding: 1em;
     margin-top: 1em;
     border-left: 5px solid #333;
+}
+
+
+/* thank you */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 450px;
+    margin-top: 300px;
+    margin-left: 485px;
+}
+
+.popup button {
+    background-color: #ff8533;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.popup button:hover {
+    background-color: #ff8533;
 }
 
 /* FAQ Section */
